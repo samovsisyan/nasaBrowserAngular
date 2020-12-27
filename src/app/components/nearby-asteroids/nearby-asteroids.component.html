@@ -1,1 +1,60 @@
-<p>nearby-asteroids works!</p>
+<!--<h1>{{"HOME" | translate}}</h1>-->
+<!--<div>-->
+<!--  <button (click)="translate.use('en')">EN</button>-->
+<!--  <button (click)="translate.use('am')">AM</button>-->
+<!--  <button (click)="translate.use('ru')">RU</button>-->
+<!--</div>-->
+
+<div>
+  <h1>
+    {{"NASA BROWSER" | translate}}
+  </h1>
+  <nav>
+    <ul id="menu">
+      <li>
+        <a routerLink="/" routerLinkActive="active">
+          {{"HOME" | translate}}
+        </a> <span>|</span>
+      </li>
+      <li>
+        <a routerLink="/asteroids" routerLinkActive="active">
+          {{"NEARBY ASTEROIDS" | translate}}
+        </a> <span>|</span>
+      </li>
+      <li>
+        <a routerLink="/apod" routerLinkActive="active">
+          {{"ASTRONOMY PICTURE OF THE DAY" | translate}}
+        </a> <span>|</span>
+      </li>
+      <li>
+        <a routerLink="/submit-planet" routerLinkActive="active">
+          {{"SUBMIT NEW PLANET" | translate}}
+        </a>
+      </li>
+    </ul>
+
+
+    <ul className="lang-bar">
+
+
+
+      <li>
+        <a href="#" (click)="translate.use('en')">EN</a> <span>|</span>
+      </li>
+      <li>
+        <a href="#" (click)="translate.use('ru')">РУ</a> <span>|</span>
+      </li>
+      <li>
+        <a href="#" (click)="translate.use('am')">ՀՅ</a>
+      </li>
+    </ul>
+  </nav>
+
+<h1>NEARBY ASTEROIDS</h1>
+
+  <footer>
+    © 2016
+  </footer>
+</div>
+
+<router-outlet></router-outlet>

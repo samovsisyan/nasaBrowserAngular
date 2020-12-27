@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-submit-new-planet',
@@ -7,8 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubmitNewPlanetComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public translate: TranslateService) { }
   ngOnInit(): void {
   }
 

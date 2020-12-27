@@ -12,6 +12,15 @@ import {NgbPaginationModule, NgbAlertModule, NgbModule} from '@ng-bootstrap/ng-b
 import { NearbyAsteroidsComponent } from './components/nearby-asteroids/nearby-asteroids.component';
 import { AstronomyPictureComponent } from './components/astronomy-picture/astronomy-picture.component';
 import { SubmitNewPlanetComponent } from './components/submit-new-planet/submit-new-planet.component';
+import {RouterModule, Routes} from '@angular/router';
+
+
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'asteroids', component: NearbyAsteroidsComponent },
+  { path: 'apod', component: AstronomyPictureComponent },
+  { path: 'submit-planet', component: SubmitNewPlanetComponent },
+];
 
 @NgModule({
   declarations: [
@@ -36,10 +45,12 @@ import { SubmitNewPlanetComponent } from './components/submit-new-planet/submit-
     }),
     NgbPaginationModule,
     NgbAlertModule,
-    NgbModule
+    NgbModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [RouterModule]
 })
 export class AppModule { }
 

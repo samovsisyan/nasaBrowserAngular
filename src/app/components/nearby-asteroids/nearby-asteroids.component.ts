@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-nearby-asteroids',
@@ -7,8 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NearbyAsteroidsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public translate: TranslateService) { }
   ngOnInit(): void {
   }
 
