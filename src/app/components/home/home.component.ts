@@ -8,10 +8,7 @@ import {TranslateService} from '@ngx-translate/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public translate: TranslateService) {
-    console.log(translate);
-  }
-
+  constructor(public translate: TranslateService) { }
   ngOnInit(): void {
   }
 

@@ -6,12 +6,21 @@ import { AppComponent } from './app.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
+import { CarouserlBasicComponent } from './components/home/carouserl-basic/carouserl-basic.component';
+import {NgbPaginationModule, NgbAlertModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NearbyAsteroidsComponent } from './components/nearby-asteroids/nearby-asteroids.component';
+import { AstronomyPictureComponent } from './components/astronomy-picture/astronomy-picture.component';
+import { SubmitNewPlanetComponent } from './components/submit-new-planet/submit-new-planet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    CarouserlBasicComponent,
+    NearbyAsteroidsComponent,
+    AstronomyPictureComponent,
+    SubmitNewPlanetComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +33,10 @@ import { HomeComponent } from './home/home.component';
         useFactory: createTranslateLoader,
         deps: [HttpClient],
       }
-    })
+    }),
+    NgbPaginationModule,
+    NgbAlertModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
