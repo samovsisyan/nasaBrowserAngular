@@ -14,7 +14,7 @@ import { AstronomyPictureComponent } from './components/astronomy-picture/astron
 import { SubmitNewPlanetComponent } from './components/submit-new-planet/submit-new-planet.component';
 import {RouterModule, Routes} from '@angular/router';
 import {NbServiceService} from './service/nb-service.service';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 
 const routes: Routes = [
@@ -49,7 +49,8 @@ const routes: Routes = [
     NgbAlertModule,
     NgbModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ NbServiceService],
   bootstrap: [AppComponent],

@@ -65,11 +65,14 @@
     <div>
 
       <div *ngFor="let data of response?.near_earth_objects; let i = index">
-        <div *ngFor="let resDate of data[i]">
-            <span>{{resDate[0].id}}</span>
+        <div *ngFor="let resDate of data[i]; let j = index;">
+            <span>{{resDate[j]?.id}}</span>
         </div>
       </div>
+
+<!--      {{response.near_earth_objects}}-->
     </div>
+
 
     <div>
 <!--      <span>{{response.explanation}}</span>-->

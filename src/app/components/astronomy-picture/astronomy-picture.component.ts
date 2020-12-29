@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {HttpClient} from '@angular/common/http';
+import {NbServiceService} from '../../service/nb-service.service';
 
 @Component({
   selector: 'app-astronomy-picture',
@@ -8,17 +9,15 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./astronomy-picture.component.scss']
 })
 export class AstronomyPictureComponent implements OnInit {
-  // startDate: string;
-  // endDate: string;
-  date = '';
+
   response: any;
-  newDate  = '';
+  newDate = '';
 
-  constructor(public translate: TranslateService, private http: HttpClient) { }
-
-  changeDate(date: string): void {
-    this.newDate = date;
+  constructor(public translate: TranslateService, private http: HttpClient) {
   }
+
+
+
   addDate(date: string): any {
     this.http.get(
       `https://api.nasa.gov/planetary/apod?date=${date}&api_key=vsOioM79hYpi8fMRm0Bs5kwcffjwKdzXYc5LqwCs`
@@ -29,7 +28,6 @@ export class AstronomyPictureComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(11111, this.response);
   }
 
 
