@@ -13,6 +13,8 @@ import { NearbyAsteroidsComponent } from './components/nearby-asteroids/nearby-a
 import { AstronomyPictureComponent } from './components/astronomy-picture/astronomy-picture.component';
 import { SubmitNewPlanetComponent } from './components/submit-new-planet/submit-new-planet.component';
 import {RouterModule, Routes} from '@angular/router';
+import {NbServiceService} from './service/nb-service.service';
+import {FormsModule} from '@angular/forms';
 
 
 const routes: Routes = [
@@ -46,9 +48,10 @@ const routes: Routes = [
     NgbPaginationModule,
     NgbAlertModule,
     NgbModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
-  providers: [],
+  providers: [ NbServiceService],
   bootstrap: [AppComponent],
   exports: [RouterModule]
 })

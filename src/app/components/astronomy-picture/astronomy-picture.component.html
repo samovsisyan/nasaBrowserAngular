@@ -52,9 +52,24 @@
 
 <h1>ASTRONOMY POCTURE</h1>
 
+  <div class="section">
+  <p>Each day a different image or photograph of our fascinating universe is featured, along with a
+    brief explanation written by a professional astronomer.</p>
+
+  <input type="date" #inputElement>
+  <button (click)="addDate(inputElement.value)">GO</button>
+
+  <div>
+    <span>{{response.explanation}}</span>
+    <img [src]="response.url" alt="">
+  </div>
+
+
+  </div>
+
   <footer>
     © 2016
   </footer>
 </div>
 
-<router-outlet></router-outlet>
+<!--<router-outlet></router-outlet>-->

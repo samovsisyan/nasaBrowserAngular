@@ -52,9 +52,30 @@
 
 <h1>NEARBY ASTEROIDS</h1>
 
+
+  <div class="section">
+    <p>Search for Asteroids based on their closest approach date to Earth</p>
+
+
+    <input type="date" #inputElementStart>
+    <input type="date" #inputElementEnd>
+    <button (click)="addDate(inputElementStart.value, inputElementEnd.value)">GO</button>
+
+
+    <div>
+
+      <div *ngFor="let data of response?.near_earth_objects; let i = index">
+        <div *ngFor="let resDate of data[i]">
+            <span>{{resDate[0].id}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+<!--      <span>{{response.explanation}}</span>-->
+<!--      <img [src]="response.url" alt="">-->
+    </div>
   <footer>
     © 2016
   </footer>
 </div>
-
-<router-outlet></router-outlet>
