@@ -1,10 +1,3 @@
-<!--<h1>{{"HOME" | translate}}</h1>-->
-<!--<div>-->
-<!--  <button (click)="translate.use('en')">EN</button>-->
-<!--  <button (click)="translate.use('am')">AM</button>-->
-<!--  <button (click)="translate.use('ru')">RU</button>-->
-<!--</div>-->
-
 <div>
   <h1>
     {{"NASA BROWSER" | translate}}
@@ -37,7 +30,6 @@
     <ul className="lang-bar">
 
 
-
       <li>
         <a href="#" (click)="translate.use('en')">EN</a> <span>|</span>
       </li>
@@ -50,9 +42,6 @@
     </ul>
   </nav>
 
-<h1>NEARBY ASTEROIDS</h1>
-
-
   <div class="section">
     <p>Search for Asteroids based on their closest approach date to Earth</p>
 
@@ -64,21 +53,49 @@
 
     <div>
 
-      <div *ngFor="let data of response?.near_earth_objects; let i = index">
-        <div *ngFor="let resDate of data[i]; let j = index;">
-            <span>{{resDate[j]?.id}}</span>
-        </div>
-      </div>
+      <!--      <div *ngFor="let data of response?.near_earth_objects; let i = index">-->
+      <!--        <div *ngFor="let resDate of data[i]; let j = index;">-->
+      <!--          <span>{{resDate[j]?.id}}</span>-->
+      <!--        </div>-->
+      <!--      </div>-->
 
-<!--      {{response.near_earth_objects}}-->
+<!--      <div *ngFor="let data of response?.near_earth_objects | keyvalue; let i = index">-->
+<!--        <span>{{data.key}}:{{data.value[i].absolute_magnitude_h}}</span>-->
+<!--      </div>-->
+
+
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Country</th>
+          <th scope="col">Area</th>
+          <th scope="col">Population</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let data of response?.near_earth_objects | keyvalue; let i = index">
+<!--          <span>{{data.key}}:{{data.value[i].absolute_magnitude_h}}</span>-->
+          <th scope="row">{{ i + 1 }}</th>
+          <td>
+            {{data.value[i].absolute_magnitude_h}}
+          </td>
+          <td>{{data.value[i].absolute_magnitude_h}}</td>
+          <td>{{data.value[i].absolute_magnitude_h}}</td>
+        </tr>
+        </tbody>
+      </table>
+
+
     </div>
 
 
     <div>
-<!--      <span>{{response.explanation}}</span>-->
-<!--      <img [src]="response.url" alt="">-->
+      <!--      <span>{{response.explanation}}</span>-->
+      <!--      <img [src]="response.url" alt="">-->
     </div>
-  <footer>
-    © 2016
-  </footer>
+    <footer>
+      © 2016
+    </footer>
+  </div>
 </div>

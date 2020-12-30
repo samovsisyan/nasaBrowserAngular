@@ -12,7 +12,7 @@ export class NearbyAsteroidsComponent implements OnInit {
 // startDate: string;
 //   endDate: string;
   // date = '';
-  response: any;
+  public response: any;
   // newDate  = '';
 
   constructor(public translate: TranslateService, private http: HttpClient) { }
