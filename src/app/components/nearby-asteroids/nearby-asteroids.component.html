@@ -73,15 +73,15 @@
           <th scope="col">Population</th>
         </tr>
         </thead>
-        <tbody>
-        <tr *ngFor="let data of response?.near_earth_objects | keyvalue; let i = index">
-<!--          <span>{{data.key}}:{{data.value[i].absolute_magnitude_h}}</span>-->
+        <tbody *ngFor="let data of response?.near_earth_objects | keyvalue; let i = index">
+        <tr *ngFor="let dataNew of data[i] | keyvalue; let j = index">
+          <span>{{dataNew.key}}:{{dataNew.value[j].absolute_magnitude_h}}</span>
           <th scope="row">{{ i + 1 }}</th>
           <td>
-            {{data.value[i].absolute_magnitude_h}}
+            {{dataNew.value[j].absolute_magnitude_h}}
           </td>
-          <td>{{data.value[i].absolute_magnitude_h}}</td>
-          <td>{{data.value[i].absolute_magnitude_h}}</td>
+          <td>{{dataNew.value[j].absolute_magnitude_h}}</td>
+          <td>{{dataNew.value[j].absolute_magnitude_h}}</td>
         </tr>
         </tbody>
       </table>
