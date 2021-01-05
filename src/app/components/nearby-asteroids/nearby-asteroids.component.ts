@@ -15,6 +15,10 @@ export class NearbyAsteroidsComponent implements OnInit {
   public response: any;
   // newDate  = '';
 
+  items = [];
+  pageOfItems?: Array<any>;
+
+
 
   constructor(public translate: TranslateService, private http: HttpClient) { }
   addDate(startDate: string, endDate: string): any {
@@ -29,6 +33,11 @@ export class NearbyAsteroidsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.items = Array(3).fill(0).map((x, i) => ({ id: (i + 1), name: `Item ${i + 1}`}));
+
+  }
+  onChangePage(pageOfItems: Array<any>): void {
+    this.pageOfItems = pageOfItems;
   }
 
 }

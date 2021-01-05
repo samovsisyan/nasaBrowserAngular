@@ -16,6 +16,8 @@ import {RouterModule, Routes} from '@angular/router';
 import {NbServiceService} from './service/nb-service.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {JwPaginationModule} from 'jw-angular-pagination';
+// import {JwPaginationModule} from 'jw-angular-pagination';
 
 
 const routes: Routes = [
@@ -52,7 +54,9 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    JwPaginationModule,
+    // JwPaginationModule,
   ],
   providers: [ NbServiceService],
   bootstrap: [AppComponent],

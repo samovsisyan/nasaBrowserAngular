@@ -8,7 +8,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./submit-new-planet.component.scss']
 })
 export class SubmitNewPlanetComponent implements OnInit {
-  newPlante: FormGroup;
+  newPlante?: FormGroup;
   submitted = false;
 
   constructor(public translate: TranslateService, private fb: FormBuilder) { }

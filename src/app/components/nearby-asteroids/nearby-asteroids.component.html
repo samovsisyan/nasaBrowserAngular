@@ -42,7 +42,7 @@
     </ul>
   </nav>
 
-  <div class="section">
+  <div class="nearby-asteroids">
     <p>Search for Asteroids based on their closest approach date to Earth</p>
 
 
@@ -63,28 +63,32 @@
 <!--        <span>{{data.key}}:{{data.value[i].absolute_magnitude_h}}</span>-->
 <!--      </div>-->
 
+      <div *ngFor="let count of response | keyvalue; let i = index">
+        <h3>{{count?.key}}:{{count?.value}}</h3>
+      </div>
+<!--      <table class="table table-striped">-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--          <th scope="col">#</th>-->
+<!--          <th scope="col">Country</th>-->
+<!--          <th scope="col">Area</th>-->
+<!--          <th scope="col">Population</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
 
-      <table class="table table-striped">
-        <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Country</th>
-          <th scope="col">Area</th>
-          <th scope="col">Population</th>
-        </tr>
-        </thead>
-        <tbody *ngFor="let data of response?.near_earth_objects | keyvalue; let i = index">
-        <tr *ngFor="let dataNew of data[i] | keyvalue; let j = index">
-          <span>{{dataNew.key}}:{{dataNew.value[j].absolute_magnitude_h}}</span>
-          <th scope="row">{{ i + 1 }}</th>
-          <td>
-            {{dataNew.value[j].absolute_magnitude_h}}
-          </td>
-          <td>{{dataNew.value[j].absolute_magnitude_h}}</td>
-          <td>{{dataNew.value[j].absolute_magnitude_h}}</td>
-        </tr>
-        </tbody>
-      </table>
+
+<!--        <tbody *ngFor="let data of response?.near_earth_objects | keyvalue; let i = index">-->
+<!--        <tr *ngFor="let dataNew of data[i] | keyvalue; let j = index">-->
+<!--          <span>{{dataNew.key}}:{{dataNew.value[j].id}}</span>-->
+<!--          <th scope="row">{{ i + 1 }}</th>-->
+<!--          <td>-->
+<!--            {{dataNew.value[j].id}}-->
+<!--          </td>-->
+<!--          <td>{{dataNew.value[j].id}}</td>-->
+<!--          <td>{{dataNew.value[j].id}}</td>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--      </table>-->
 
 
     </div>
@@ -98,4 +102,24 @@
       © 2016
     </footer>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="card-body">
+      <div *ngFor="let item of pageOfItems">{{item.name}}</div>
+    </div>
+    <div class="card-footer pb-0 pt-3">
+      <jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination>
+    </div>
+
 </div>
