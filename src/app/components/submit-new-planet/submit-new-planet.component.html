@@ -1,0 +1,108 @@
+<div>
+  <h1>
+    {{"NASA BROWSER" | translate}}
+  </h1>
+  <nav>
+    <ul id="menu">
+      <li>
+        <a routerLink="/" routerLinkActive="active">
+          {{"HOME" | translate}}
+        </a> <span>|</span>
+      </li>
+      <li>
+        <a routerLink="/asteroids" routerLinkActive="active">
+          {{"NEARBY ASTEROIDS" | translate}}
+        </a> <span>|</span>
+      </li>
+      <li>
+        <a routerLink="/apod" routerLinkActive="active">
+          {{"ASTRONOMY PICTURE OF THE DAY" | translate}}
+        </a> <span>|</span>
+      </li>
+      <li>
+        <a routerLink="/submit-planet" routerLinkActive="active">
+          {{"SUBMIT NEW PLANET" | translate}}
+        </a>
+      </li>
+    </ul>
+
+
+    <ul className="lang-bar">
+
+
+      <li>
+        <a href="#" (click)="translate.use('en')">EN</a> <span>|</span>
+      </li>
+      <li>
+        <a href="#" (click)="translate.use('ru')">РУ</a> <span>|</span>
+      </li>
+      <li>
+        <a href="#" (click)="translate.use('am')">ՀՅ</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div id="submit_new_planet">
+
+    <form [formGroup]="newPlante" (ngSubmit)="onSubmit()">
+      <div>
+        <input placeholder="Planet Name" formControlName="planetName" type="text"  class="form-control" [ngClass]="{ 'is-invalid': submitted && f.planetName.errors }"/>
+        <div *ngIf="submitted && f.planetName.errors" class="invalid-feedback">
+          <div *ngIf="f.planetName.errors.required">Planet Name is required</div>
+        </div>
+        <select formControlName="select" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.select.errors }">
+          <option disabled="" selected="">
+            Galaxy name
+          </option>
+          <option value="Milky Way">
+            Milky Way
+          </option>
+          <option value="Messier 83">
+            Messier 83
+          </option>
+          <option value="Black Eye Galaxy">
+            Black Eye Galaxy
+          </option>
+          <option value="Pinwheel">
+            Pinwheel
+          </option>
+          <option value="Canis Major Dwarf">
+            Canis Major Dwarf
+          </option>
+          <option value="Somewhere else...">
+            Somewhere else...
+          </option>
+        </select>
+        <div *ngIf="submitted && f.select.errors" class="invalid-feedback">
+          <div *ngIf="f.select.errors.required">Select is required</div>
+        </div>
+        <input placeholder="Diameter (km)" formControlName="diameterKm" type="number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.diameterKm.errors }"/>
+        <div *ngIf="submitted && f.diameterKm.errors" class="invalid-feedback">
+          <div *ngIf="f.diameterKm.errors.required">Diameter (km) is required</div>
+        </div>
+        <input placeholder="Distance (mln km)" formControlName="distanceMinKm" type="number" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.distanceMinKm.errors }"/>
+        <div *ngIf="submitted && f.distanceMinKm.errors" class="invalid-feedback">
+          <div *ngIf="f.distanceMinKm.errors.required">Distance (mln km) is required</div>
+        </div>
+
+      </div>
+      <div>
+        <input placeholder="Your name" formControlName="yourName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.yourName.errors }"/>
+        <div *ngIf="submitted && f.yourName.errors" class="invalid-feedback">
+          <div *ngIf="f.yourName.errors.required">Your Name is required</div>
+        </div>
+
+        <input placeholder="Your email" formControlName="yourEmail" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.yourEmail.errors }"/>
+        <div *ngIf="submitted && f.yourEmail.errors" class="invalid-feedback">
+          <div *ngIf="f.yourEmail.errors.required">Your email is required</div>
+        </div>
+
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <footer>
+    © 2016
+  </footer>
+</div>

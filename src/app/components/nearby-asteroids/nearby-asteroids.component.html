@@ -1,0 +1,125 @@
+<div>
+  <h1>
+    {{"NASA BROWSER" | translate}}
+  </h1>
+  <nav>
+    <ul id="menu">
+      <li>
+        <a routerLink="/" routerLinkActive="active">
+          {{"HOME" | translate}}
+        </a> <span>|</span>
+      </li>
+      <li>
+        <a routerLink="/asteroids" routerLinkActive="active">
+          {{"NEARBY ASTEROIDS" | translate}}
+        </a> <span>|</span>
+      </li>
+      <li>
+        <a routerLink="/apod" routerLinkActive="active">
+          {{"ASTRONOMY PICTURE OF THE DAY" | translate}}
+        </a> <span>|</span>
+      </li>
+      <li>
+        <a routerLink="/submit-planet" routerLinkActive="active">
+          {{"SUBMIT NEW PLANET" | translate}}
+        </a>
+      </li>
+    </ul>
+
+
+    <ul className="lang-bar">
+
+
+      <li>
+        <a href="#" (click)="translate.use('en')">EN</a> <span>|</span>
+      </li>
+      <li>
+        <a href="#" (click)="translate.use('ru')">РУ</a> <span>|</span>
+      </li>
+      <li>
+        <a href="#" (click)="translate.use('am')">ՀՅ</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="nearby-asteroids">
+    <p>Search for Asteroids based on their closest approach date to Earth</p>
+
+
+    <input type="date" #inputElementStart>
+    <input type="date" #inputElementEnd>
+    <button (click)="addDate(inputElementStart.value, inputElementEnd.value)">GO</button>
+
+
+    <div>
+
+      <!--      <div *ngFor="let data of response?.near_earth_objects; let i = index">-->
+      <!--        <div *ngFor="let resDate of data[i]; let j = index;">-->
+      <!--          <span>{{resDate[j]?.id}}</span>-->
+      <!--        </div>-->
+      <!--      </div>-->
+
+<!--      <div *ngFor="let data of response?.near_earth_objects | keyvalue; let i = index">-->
+<!--        <span>{{data.key}}:{{data.value[i].absolute_magnitude_h}}</span>-->
+<!--      </div>-->
+
+      <div *ngFor="let count of response | keyvalue; let i = index">
+        <h3>{{count?.key}}:{{count?.value}}</h3>
+      </div>
+<!--      <table class="table table-striped">-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--          <th scope="col">#</th>-->
+<!--          <th scope="col">Country</th>-->
+<!--          <th scope="col">Area</th>-->
+<!--          <th scope="col">Population</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+
+
+<!--        <tbody *ngFor="let data of response?.near_earth_objects | keyvalue; let i = index">-->
+<!--        <tr *ngFor="let dataNew of data[i] | keyvalue; let j = index">-->
+<!--          <span>{{dataNew.key}}:{{dataNew.value[j].id}}</span>-->
+<!--          <th scope="row">{{ i + 1 }}</th>-->
+<!--          <td>-->
+<!--            {{dataNew.value[j].id}}-->
+<!--          </td>-->
+<!--          <td>{{dataNew.value[j].id}}</td>-->
+<!--          <td>{{dataNew.value[j].id}}</td>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--      </table>-->
+
+
+    </div>
+
+
+    <div>
+      <!--      <span>{{response.explanation}}</span>-->
+      <!--      <img [src]="response.url" alt="">-->
+    </div>
+    <footer>
+      © 2016
+    </footer>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="card-body">
+      <div *ngFor="let item of pageOfItems">{{item.name}}</div>
+    </div>
+    <div class="card-footer pb-0 pt-3">
+      <jw-pagination [items]="items" (changePage)="onChangePage($event)"></jw-pagination>
+    </div>
+
+</div>

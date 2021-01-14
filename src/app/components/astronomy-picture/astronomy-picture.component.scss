@@ -1,0 +1,55 @@
+
+h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #22313F;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  padding-left: 236px;
+
+  #menu li {
+    padding-left: 10px;
+
+    a {
+      font-size: 14px;
+      color: #0275d8;
+      text-decoration: none;
+    }
+
+    span {
+      padding-left: 10px;
+    }
+  }
+
+  ul {
+    display: flex;
+    list-style-type: none
+  }
+
+
+  .lang-bar li {
+    padding-left: 10px;
+
+    a {
+      font-size: 12px;
+      color: #0275d8;
+      text-decoration: none;
+    }
+
+    span {
+      padding-left: 10px;
+    }
+
+  }
+}
+
+.astronomy-picture{
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+}

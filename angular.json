@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "nasaBrowserAngular"
+  "defaultProject": "nasaBrowserAngular",
+  "cli": {
+    "analytics": "fdd07007-48a3-4399-975d-bc5d890cf39d"
+  }
 }
